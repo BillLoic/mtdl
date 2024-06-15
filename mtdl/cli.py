@@ -23,7 +23,7 @@ def main():
     
     parser.add_argument("-v", "--version", action="version", version=__version__, help="Show version")
     
-    parser.add_argument("-h", "--header", type=str, help="The extra headers for request. (Please write in JSON format.)", dest="header")
+    parser.add_argument("--header", type=str, help="The extra headers for request. (Please write in JSON format.)", dest="header")
     
     args = parser.parse_args()
     
