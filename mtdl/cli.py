@@ -29,7 +29,7 @@ def main():
     
     print(SUPPORT_TEXT)
     
-    process = MultiThreadDownloader(args.url, args.chunk_size, args.out_filename, extra_headers=json.loads(args.header))
+    process = MultiThreadDownloader(args.url, args.chunk_size, args.out_filename, extra_headers=json.loads(args.header) if args.header is not None else None)
     
     process.start()
     
