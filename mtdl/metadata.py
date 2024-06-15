@@ -1,7 +1,7 @@
 import sys
 import platform
 
-__version__ = "4.6"
+__version__ = "4.7"
 __author__ = "Bill Loic"
 __author_email__ = "billloic6@gmail.com"
 __release_time__ = "2024/06/09T08:12:00"
