@@ -12,7 +12,7 @@ def abort_if_exception(func):
             result = func(*args, **kwds)
             #print(f"Thread {current_thread()} :{func.__qualname__} returned {result}.", end="\n")
             return result
-        except BaseException as error:
+        except Exception as error:
             print(f"[{time.ctime(time.time())}] - E: ", current_thread(), func, error.__class__.__qualname__,  error)
             print(traceback.format_exc())
             print(colorama.Fore.RED + F"Error: See the message below:\n", colorama.Fore.RESET, traceback.format_exc(), "\n\n\n")

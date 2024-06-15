@@ -2,6 +2,7 @@ from mtdl.downloader import MultiThreadDownloader, abort_if_exception
 from mtdl.metadata import format_metadata, __author_email__, __version__
 import logging
 import argparse
+import json
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -11,6 +12,7 @@ f"""
 If you found any bug, contact {__author_email__}, if you like it, you can donate me.
 """
 
+@abort_if_exception
 def main():
     parser = argparse.ArgumentParser(epilog=SUPPORT_TEXT_BEFORE)
     parser.add_argument("url", help="", action="store")
@@ -27,7 +29,7 @@ def main():
     
     print(SUPPORT_TEXT)
     
-    process = MultiThreadDownloader(args.url, args.chunk_size, args.out_filename)
+    process = MultiThreadDownloader(args.url, args.chunk_size, args.out_filename, extra_headers=json.loads(args.header))
     
     process.start()
     
