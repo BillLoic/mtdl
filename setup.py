@@ -19,7 +19,7 @@ setup_data = dict(name="mtdl",
     description="Python multi-thread file downloader.", 
     long_description=desp, 
     long_description_content_type= "text/markdown",
-    install_requires=["colorama", "tqdm"], 
+    install_requires=["colorama", "tqdm", "requests"], 
     entry_points={"console_scripts":["mtdl = mtdl.cli:main"]}, 
     classifiers=[
         "Programming Language :: Python", 
